@@ -24,13 +24,13 @@ function App() {
     { title: "Calendar", icon: <BsFillCalendar2WeekFill /> },
     { title: "Profile", icon: <BsPersonCircle />, spacing: true },
     { title: "Settings", icon: <MdSettings /> },
-    { title: "Logout", icon: <FaPowerOff /> },
+    { title: "Logout", icon: <FaPowerOff />, spacing: true },
   ];
 
   return (
     <div className="flex">
       <div
-        className={`bg-dark-purple h-screen p-5 pt-8 duration-300 ${
+        className={`bg-zinc-800 h-screen p-5 pt-8 duration-300 ${
           open ? "w-72" : "w-20"
         } relative`}
       >
@@ -42,8 +42,8 @@ function App() {
         />
 
         <div className={`inline-flex`}>
-          <GiAutoRepair className={`bg-amber-300 text-4xl rounded cursor-pointer block float-left mr-2 duration-500 ${open && "rotate-[360deg]"} `} />
-          <h1 className={`text-white origin-left font-medium text-2xl duration-300 ${!open && "scale-0"} `} >Tailwind</h1>
+          <GiAutoRepair className={`bg-my-orange text-4xl rounded cursor-pointer block float-left mr-2 duration-500 ${open && "rotate-[360deg]"} `} />
+          <h1 className={`text-white origin-left font-medium text-2xl duration-300 ${!open && "hidden"} `} >Repair Book</h1>
         </div>
 
         <div className={`flex items-center rounded-md bg-light-white mt-6 ${!open ? "px-2.5" : "px-4" }  py-2`}>
