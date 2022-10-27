@@ -45,7 +45,7 @@ function App() {
 
         <div className={`inline-flex`}>
           <AiFillEnvironment className={`bg-my-orange text-4xl rounded cursor-pointer block float-left mr-2 duration-500 ${open && "rotate-[360deg]"} `} />
-          <h1 className={`text-white origin-left font-medium text-2xl duration-300 ${!open && "hidden"} `} >Tailwind</h1>
+          <h1 className={`text-white origin-left font-medium text-2xl duration-300 ${!open && "hidden"} `} >Repair Book</h1>
         </div>
 
         <div className={`flex items-center rounded-md bg-light-white mt-6 ${!open ? "px-2.5" : "px-4" }  py-2`}>
