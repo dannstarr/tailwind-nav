@@ -7,6 +7,8 @@ import { RiDashboardFill } from "react-icons/ri";
 import { ImTicket } from "react-icons/im"
 import { IoIosPeople } from "react-icons/io";
 import { FaPowerOff } from 'react-icons/fa'
+import { v4 as uuidv4 } from 'uuid';
+
 
 function App() {
   const [open, setOpen] = useState(true);
@@ -15,10 +17,10 @@ function App() {
   const Menus = [
     { title: "Dashboard" },
     {
-      title: "Tickets",
+      title: "Items",
       icon: <ImTicket />,
       submenu: true,
-      submenuItems: [{ title: "Create New Ticket" }],
+      submenuItems: [{ title: "Create New Item" }],
     },
     { title: "Customers", icon: <IoIosPeople /> },
     { title: "Calendar", icon: <BsFillCalendar2WeekFill /> },
@@ -42,20 +44,20 @@ function App() {
         />
 
         <div className={`inline-flex`}>
-          <GiAutoRepair className={`bg-my-orange text-4xl rounded cursor-pointer block float-left mr-2 duration-500 ${open && "rotate-[360deg]"} `} />
-          <h1 className={`text-white origin-left font-medium text-2xl duration-300 ${!open && "hidden"} `} >Repair Book</h1>
+          <AiFillEnvironment className={`bg-my-orange text-4xl rounded cursor-pointer block float-left mr-2 duration-500 ${open && "rotate-[360deg]"} `} />
+          <h1 className={`text-white origin-left font-medium text-2xl duration-300 ${!open && "hidden"} `} >Tailwind</h1>
         </div>
 
         <div className={`flex items-center rounded-md bg-light-white mt-6 ${!open ? "px-2.5" : "px-4" }  py-2`}>
           <BsSearch className={`text-white text-lg block float-left cursor-pointer ${open && "mr-2"} `} />
 
-          <input type={"search"} placeholder="Search" className={`text-base bg-transparent w-full text-white focus:outline-none ${!open && "hidden"} `} />
+          <input key={uuidv4()} type={"search"} placeholder="Search" className={`text-base bg-transparent w-full text-white focus:outline-none ${!open && "hidden"} `} />
         </div>
 
         <ul className={'pt-2'} >
           {Menus.map((menu, index) => (
             <>
-              <li key={index} 
+              <li key={uuidv4()} 
                   className={`text-gray-300 text-sm flex items-center gap-x-5 cursor-pointer ${open && "hover:bg-light-white rounded-md" }  ${menu.spacing ? "mt-9" : "mt-3" } `}>
 
                 <span className={`text-2xl block float-left ${!open && "p-2"} ${!open && "hover:bg-light-white rounded-md" } `}>
@@ -74,7 +76,7 @@ function App() {
                   {menu.submenu && submenuOpen && open && (
                     <ul>
                       {menu.submenuItems.map((submenuItem, index) => (
-                        <li key={index} 
+                        <li key={uuidv4()} 
                             className={`text-gray-300 text-sm duration-300 flex items-center gap-x-4 cursor-pointer p-2 px-5 hover:bg-light-white rounded-md`}>
                       
                           {submenuItem.title}
